@@ -17,7 +17,7 @@ You can also watch [this video](https://www.youtube.com/watch?v=7CqJlxBYj-M) if 
 If you're a true beginner, you can follow [this Open Classroom course](https://openclassrooms.com/fr/courses/5614116-go-full-stack-with-node-js-express-and-mongodb).
 
 ## Table of contents
-1. [Functionalities](https://github.com/OlaPom/iscsc.fr/tree/version1#1-functionalities)
+1. [Functionalities](https://github.com/OlaPom/iscsc.fr/blob/version1/README.md#1-functionalities)
 2. [Deployment](https://github.com/OlaPom/iscsc.fr/tree/version1#2-deployment)
 
    2.1 [Development mode](https://github.com/OlaPom/iscsc.fr/tree/version1#21-development-mode)
