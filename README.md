@@ -16,6 +16,17 @@ For more information, check [this article](https://www.mongodb.com/mern-stack).
 You can also watch [this video](https://www.youtube.com/watch?v=7CqJlxBYj-M) if you want to get more familiar with the stack.
 If you're a true beginner, you can follow [this Open Classroom course](https://openclassrooms.com/fr/courses/5614116-go-full-stack-with-node-js-express-and-mongodb).
 
+## Table of contents
+1. [Functionalities](https://github.com/OlaPom/iscsc.fr/tree/version1#1-functionalities)
+2. [Deployment](https://github.com/OlaPom/iscsc.fr/tree/version1#2-deployment)
+
+   2.1 [Development mode](https://github.com/OlaPom/iscsc.fr/tree/version1#21-development-mode)
+   
+   2.2 [Production mode](https://github.com/OlaPom/iscsc.fr/tree/version1#22-production-mode)
+3. [Repository structure](https://github.com/OlaPom/iscsc.fr/tree/version1#22-production-mode)
+4. [Bugs and recommendations](https://github.com/OlaPom/iscsc.fr/tree/version1#4-bugs-and-recommendations)
+5. [Incoming works](https://github.com/OlaPom/iscsc.fr/tree/version1#4-bugs-and-recommendations)
+  
 ## 1. Functionalities
 
 The main functionalities of the website at the moment are creating, reading, and deleting posts on the blog section of the website.
