@@ -17,15 +17,15 @@ You can also watch [this video](https://www.youtube.com/watch?v=7CqJlxBYj-M) if 
 If you're a true beginner, you can follow [this Open Classroom course](https://openclassrooms.com/fr/courses/5614116-go-full-stack-with-node-js-express-and-mongodb).
 
 ## Table of contents
-1. [Functionalities](https://github.com/OlaPom/iscsc.fr/blob/version1/README.md#1-functionalities)
-2. [Deployment](https://github.com/OlaPom/iscsc.fr/tree/version1#2-deployment)
+1. [Functionalities](#1-functionalities)
+2. [Deployment](#2-deployment)
 
-   2.1 [Development mode](https://github.com/OlaPom/iscsc.fr/tree/version1#21-development-mode)
+   2.1 [Development mode](#21-development-mode)
    
-   2.2 [Production mode](https://github.com/OlaPom/iscsc.fr/tree/version1#22-production-mode)
-3. [Repository structure](https://github.com/OlaPom/iscsc.fr/tree/version1#22-production-mode)
-4. [Bugs and recommendations](https://github.com/OlaPom/iscsc.fr/tree/version1#4-bugs-and-recommendations)
-5. [Incoming works](https://github.com/OlaPom/iscsc.fr/tree/version1#4-bugs-and-recommendations)
+   2.2 [Production mode](#22-production-mode)
+3. [Repository structure](#3-repository-structure)
+4. [Bugs and recommendations](#4-bugs-and-recommendations)
+5. [Incoming works](#5-incoming-works)
   
 ## 1. Functionalities
 
