@@ -16,7 +16,7 @@ For more information, check [this article](https://www.mongodb.com/mern-stack).
 You can also watch [this video](https://www.youtube.com/watch?v=7CqJlxBYj-M) if you want to get more familiar with the stack.
 If you're a true beginner, you can follow [this Open Classroom course](https://openclassrooms.com/fr/courses/5614116-go-full-stack-with-node-js-express-and-mongodb).
 
-## Functionalities
+## 1. Functionalities
 
 The main functionalities of the website at the moment are creating, reading, and deleting posts on the blog section of the website.
 Posts are rendered in Markdown, with the [Github Flavored Markdown, GMF](https://github.com/remarkjs/remark-gfm).
@@ -44,9 +44,9 @@ Any article submitted by other users can be read through the /blog route.
 
 You should be able to delete any article **you created** from the database.
 
-> Note: if you try to delete an article you did not write, it won't work but you won't receive any error message.
+Note: if you try to delete an article you did not write, it won't work but you won't receive any error message.
 
-## Deployment
+## 2. Deployment
 
 You need to set up the frontend and backend applications to test the server.
 For deployment, `development` and `production` modes are available
@@ -57,12 +57,12 @@ For deployment, `development` and `production` modes are available
 
 Here is a quick guide after cloning the repository:
 
-### Development mode
+### 2.1 Development mode
 
-#### .env file
+#### a) Set up environment variables(.env file)
 
 Before deploying the application, you need to set the environment variables. 
-From the root directory of the repository, do the following:
+- From the root directory of the repository, do the following:
 
 ```
 cp .env.example .env.development
@@ -70,11 +70,13 @@ cp .env.example .env.development
 
 After copying the example config of `.env`, you must fill in the missing information in this file. Check the example for more information.
 
-> If you don't know how to deploy your database, consider using [Atlas](https://www.mongodb.com/atlas/database).
+If you don't know how to deploy your database, consider using [Atlas](https://www.mongodb.com/atlas/database).
 
-#### Backend
+#### b) Set up backend
 
-From the root directory of the repository, do the following:
+You will need `nodemon` to run the backend. Use `npm install -g nodemon` to install it. Make sure you're supporting at least 2.0.20 with `nodemon --version`. Nodemon has been tested working fine with node 19.
+
+- From the root directory of the repository, do the following:
 
 ```bash
 cd backend
@@ -82,11 +84,11 @@ npm install
 npm run dev
 ```
 
-> You will need `nodemon` to run the backend. Use `npm install -g nodemon` to install it. Make sure you're supporting at least 2.0.20 with `nodemon --version`. Nodemon has been tested working fine with node 19.
+#### c) Set up frontend
 
-#### Frontend
+Make sure you're using at least version 8.19.2 by checking `npm --version`, and update if needed with `npm update`.
 
-From the root directory of the repository, do the following:
+- From the root directory of the repository, do the following:
 
 ```bash
 cd frontend
@@ -94,28 +96,29 @@ npm install
 npm run start
 ```
 
-Make sure you're using at least version 8.19.2 by checking `npm --version`, and update if needed with `npm update`.
-
-### Production mode
+### 2.2 Production mode
 
 The production mode allows to deploy the application on the server. To use it, you will need:
 
 - `docker`
 - `docker-compose`
 
-#### .env file
+#### a) Set up environment variables(.env file)
 
 Before deploying the application, you need to set the environment variables as for `development` mode.
+- From the root directory of the repository, do the following:
 
 ```bash
 cp .env.example .env.production
 ```
 
-#### SSL certification
+#### b) Create SSL certificates
 
-To set up HTTPS, you will need valid SSL certificates. If you deploy the app for the first time, follow these instructions:
+To set up HTTPS, you will need valid SSL certificates.  
 
-- Comment or delete the whole server section about 443 in the `nginx/nginx.conf.template` file.
+- If you **deploy the app for the first time**, follow these instructions:
+
+1. Comment or delete the whole server section about 443 in the `nginx/nginx.conf.template` file.
 
 ```diff
 - server {
@@ -124,22 +127,22 @@ To set up HTTPS, you will need valid SSL certificates. If you deploy the app for
 - }
 ```
 
-> This step is required because the certificates don't exist yet, so they cannot be loaded in the nginx configuration.
+This step is required because the certificates don't exist yet, so they cannot be loaded in the nginx configuration.
 
-- (Re)Start the `nginx` container:
+2. (Re)Start the `nginx` container:
 
 ```bash
 sudo docker-compose --env-file .env.production up -d --build
 ```
 
-- Create the certificates with the `certbot` container:
+3. Create the certificates with the `certbot` container:
 
 ```bash
 sudo docker-compose --env-file .env.production run --rm certbot certonly --webroot --webroot-path /var/www/certbot/ -d yourdomainname.com
 ```
 
-- Restore the original `nginx/nginx.conf.template` (with `git restore nginx/nginx.conf.template` for example)
-- Stop the `nginx` container:
+4. Restore the original `nginx/nginx.conf.template` (with `git restore nginx/nginx.conf.template` for example)
+5. Stop the `nginx` container:
 
 ```bash
 sudo docker-compose --env-file .env.production down
@@ -147,23 +150,23 @@ sudo docker-compose --env-file .env.production down
 
 The certificates should have been generated in `certbot/conf/live/yourdomainname.com/`
 
-If you just want to renew existing certificates, use:
+- If you just want to **renew existing certificates**, use:
 
 ```bash
 sudo docker-compose --env-file .env.production run --rm certbot renew
 ```
 
-#### Docker
+#### c) Run Docker
 
-Once everything is ready, run
+1. Once everything is ready, run
 
 ```bash
 sudo docker-compose --env-file .env.production up -d --build
 ```
 
-> Make sure the `docker` daemon is running, or start it with `sudo dockerd`
+Make sure the `docker` daemon is running, or start it with `sudo dockerd`
 
-Your application can now be started on `$CLIENT_URL` (specified in the `.env.production` file)
+2. Your application can now be started on `$CLIENT_URL` (specified in the `.env.production` file)
 
 To see the running application, and check the logs, use
 
@@ -172,13 +175,13 @@ sudo docker ps
 sudo docker logs <CONTAINER_ID>
 ```
 
-Finally, you can stop the production mode with
+3. Finally, you can stop the production mode with
 
 ```bash
 sudo docker-compose --env-file .env.production down
 ```
 
-## Repository structure
+## 3. Repository structure
 
 Here is a list of the main folders/files of the repository.
 
@@ -222,12 +225,12 @@ iscsc.fr
 └── README.md           *this file*
 ```
 
-## Bugs and recommendations
+## 4. Bugs and recommendations
 
 Because this website is still in development, do not hesitate to open an issue if you experience any trouble using it.
 Also, feel free to share your recommendations regarding the color scheme, routes, design, UX, etc...
 
-## Incoming works
+## 5. Incoming works
 
 Here is a non-exhaustive list of incoming functionalities for the website:
 
